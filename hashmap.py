@@ -12,33 +12,42 @@
 
 def solution(queryType, query):
     ans = 0
-    hmap = {}
-    ck = 0
-    cv = 0
+    dic = {}
+    curKey = 0
+    curVal = 0
+    
     for i in range(len(queryType)):
-        cmd = queryType[i]
-        quer = query[i]
-        if cmd == "insert":
-            key,val = quer[0],quer[1]
-            hmap[key-ck]=val-cv
-        elif cmd == "addToValue":
-            k = quer[0]
-            cv+=k
-        elif cmd == "addToKey":
-            k = quer[0]
-            ck+=k
+        print(dic)
+
+        if queryType[i] == "insert":
+            key, val = query[i][0], query[i][1]
+            dic[key-curKey] = val - curVal
+            
+        elif queryType[i] == "addToValue":
+            k = query[i][0]
+            curVal += k
+            
+        elif queryType[i] == "addToKey":
+            k = query[i][0]
+            curKey += k
+            
         else:
-            k = quer[0]
-            k-=ck
-            val = hmap[k] + cv
+            k = query[i][0]
+            k -= curKey
+            val = dic[k] + curVal
             ans = ans + val
+            print(ans)
+            
     return ans
 
 queryType1 = ["insert", "insert", "addToValue", "addToKey", "get"]
-querry1 = [[1,2], [2,3],[2],[1],[3]]
+query1 = [[1,2], [2,3],[2],[1],[3]]
 
 
-queryType2 = ["insert", "addToValue", "get",  "insert", "addToKey", "addToValue", "get"]
-querry2 = [[1,2], [2], [1],[2,3],[1],[-1],[3]]
+queryType2 = ["insert", "addToValue", "get", "insert", "addToKey", "addToValue", "get"]
+query2 = [[1,2], [2], [1],[2,3],[1],[-1],[3]]
+
+solution(queryType1, query1)
+solution(queryType2, query2)
 
 

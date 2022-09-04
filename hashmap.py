@@ -1,14 +1,14 @@
-def addToValue(hmap,k):
-    for key,val in hmap.items():
-        hmap[key]+=k
-    return hmap
+# def addToValue(hmap,k):
+#     for key,val in hmap.items():
+#         hmap[key]+=k
+#     return hmap
 
-def addToKey(hmap,k):
-    newHmap={}
-    for key,val in hmap.items():
-        newKey = key+k
-    newHmap[newKey]=val
-    return newHmap
+# def addToKey(hmap,k):
+#     newHmap={}
+#     for key,val in hmap.items():
+#         newKey = key+k
+#     newHmap[newKey]=val
+#     return newHmap
 
 def solution(queryType, query):
     ans = 0

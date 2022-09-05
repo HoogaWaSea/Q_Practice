@@ -22,7 +22,6 @@ def solution(test):
     
     seen = set()
     c, sx, sy, tx, ty = test[0], test[1], test[2], test[3], test[4]
-    
     return dfs(c, sx+sy, sy, tx, ty) or dfs(c, sx, sy+sx, tx, ty) or dfs(c, sx+c, sy+c, tx, ty)
     
     

@@ -23,5 +23,7 @@ def solution(test):
 
 
 test = [1,1,4,7,6]
+test2 = [1,4,3,6,4]
 print(solution(test))
+print(solution(test2))
 
